@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Up to You · Prototype</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=Inter:wght@400;500&family=Unbounded:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div data-up-root="1" style="font-size: 16px; line-height: 1.6;">
+  <section id="mesa" style="position: relative; padding: clamp(20px, 4vw, 48px) clamp(14px, 5vw, 80px);">
+    <div style="position: relative; max-width: 1120px; margin: 0 auto;">
+      <div style="max-width: 880px; margin: 0 auto;">
+        <div data-up-table="1" style="position: relative; border-radius: 28px; padding: clamp(9px, 1.2vw, 14px); background: #ffffff; border: 1px solid #ededf0; box-shadow: 0 34px 80px -34px rgba(11,11,12,.35), 0 2px 4px rgba(11,11,12,.05);">
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 4px 8px 10px;">
+            <div style="display: flex; align-items: center; gap: 9px; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: #56565e;">
+              <span style="width: 6px; height: 6px; border-radius: 50%; background: #D49517;"></span>Table 12
+            </div>
+            <div data-up-step="1" style="font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: #6b6b73;">Step 1 of 3 · Filters</div>
+          </div>
+
+          <div data-up-screen="1" style="position: relative; border-radius: 18px; overflow: hidden; background: #ffffff; border: 1px solid #e6e6e9; font-family: 'Unbounded', system-ui, sans-serif;">
+
+            <div style="position: relative; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px clamp(14px, 2.4vw, 26px); border-bottom: 1px solid #f0f0f2; background: #ffffff; z-index: 3;">
+              <button type="button" data-up-back="1" data-act="goBack" style="display: flex; flex-direction: column; align-items: center; gap: 3px; border: 0; background: transparent; cursor: pointer; padding: 0; font-family: 'Unbounded', sans-serif; font-size: 11px; color: #0b0b0c; opacity: .35; transition: opacity .3s ease;">
+                <span style="display: flex; align-items: center; justify-content: center; width: 30px; height: 30px; border: 1.5px solid #0b0b0c; border-radius: 50%; font-family: 'Unbounded', sans-serif; font-size: 13px; line-height: 1;">‹</span>
+                <span style="font-family: 'Unbounded', sans-serif; font-size: 9px; letter-spacing: .12em; text-transform: uppercase;">Back</span>
+              </button>
+              <img src="images/logo-uptoyou.png" alt="Up to You" style="height: 36px; width: auto; display: block;">
+              <button type="button" data-act="openMenu" style="border: 0; background: transparent; padding: 4px; cursor: pointer; line-height: 0;">
+                <img src="images/menu.png" alt="Menu" style="width: 26px; height: auto; display: block; opacity: .9;">
+              </button>
+            </div>
+
+            <div data-up-drawer="1" style="position: absolute; inset: 0; z-index: 8; opacity: 0; pointer-events: none; transition: opacity .35s ease; background: rgba(11,11,12,.3); display: flex;">
+              <div data-up-drawer-card="1" style="width: min(470px, 92%); background: #ffffff; padding: clamp(16px, 2.4vw, 26px); overflow-y: auto; transform: translateX(-16px); transition: transform .4s cubic-bezier(.16,1,.3,1); box-shadow: 18px 0 50px -20px rgba(11,11,12,.4);">
+                <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: clamp(16px, 2.4vw, 24px);">
+                  <img src="images/logo-uptoyou.png" alt="Up to You" style="height: 34px; width: auto; display: block;">
+                  <button type="button" data-act="closeMenu" style="border: 0; background: transparent; cursor: pointer; font-family: 'Unbounded', sans-serif; font-size: 18px; line-height: 1; color: #0b0b0c; padding: 2px 4px;">✕</button>
+                </div>
+                <h4 style="margin: 0 0 14px; font-family: 'Unbounded', sans-serif; font-weight: 700; font-size: clamp(15px, 1.8vw, 19px); letter-spacing: -.01em;">Select your preferences</h4>
+                <div data-up-drawer-grid="1" style="display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px 6px;"></div>
+                <div style="margin-top: 14px; padding: 14px 16px; border-radius: 12px; background: #fffdf6; border: 1px solid #f0e2c2; font-family: 'Unbounded', sans-serif; font-size: 12px; line-height: 1.7; color: #56565e;">This is a closed demo: only the filters highlighted in gold can be edited.</div>
+                <button type="button" data-act="clearFilters" style="border: 0; background: transparent; cursor: pointer; padding: 14px 0 0; font-family: 'Unbounded', sans-serif; font-weight: 700; font-size: 12px; text-decoration: underline; color: #0b0b0c;">Clear filters</button>
+                <div style="display: flex; gap: 10px; margin-top: 18px;">
+                  <button type="button" data-act="applyMenu" style="font-family: 'Unbounded', sans-serif; font-weight: 700; font-size: 12px; cursor: pointer; padding: 13px 18px; border-radius: 8px; border: 2px solid #0b0b0c; background: #0b0b0c; color: #ffffff;">Apply changes</button>
+                  <button type="button" data-act="closeMenu" style="font-family: 'Unbounded', sans-serif; font-weight: 700; font-size: 12px; cursor: pointer; padding: 13px 18px; border-radius: 8px; border: 2px solid #0b0b0c; background: #ffffff; color: #0b0b0c;">Close</button>
+                </div>
+              </div><div data-act="closeMenu" style="flex: 1; cursor: pointer;"></div>
+              
+            </div>
+
+            <div data-up-pane="0" style="display: block; padding: clamp(18px, 3vw, 34px) clamp(14px, 3vw, 34px) clamp(16px, 2.4vw, 26px);">
+              <h3 style="margin: 0 auto clamp(20px, 3vw, 34px); max-width: 30ch; text-align: center; font-family: 'Unbounded', sans-serif; font-weight: 400; font-size: clamp(15px, 1.7vw, 22px); line-height: 1.5; letter-spacing: -.01em;">Select as many options as you want to <strong style="font-weight: 700;">filter</strong> so we can serve you a <strong style="font-weight: 700;">matching menu</strong></h3>
+
+              <div style="display: flex; align-items: center; justify-content: center; gap: 8px; margin: -14px auto clamp(18px, 2.6vw, 28px); font-family: 'Unbounded', sans-serif; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: #D49517;">
+                <span style="width: 5px; height: 5px; border-radius: 50%; background: #D49517;"></span>
+                <span data-up-hint="1">Tap the 3 highlighted filters</span>
+              </div>
+
+              <div data-up-grid="1" style="display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: clamp(8px, 1.6vw, 20px) clamp(4px, 1vw, 12px);">
+                <button type="button" data-up-chip="objetivo" data-act="toggleChip" class="s2 h5" ><span data-up-ico="1" style="display: block; width: 100%; height: clamp(54px, 7vw, 84px); background: #0b0b0c; -webkit-mask: url('images/component-7.png') center/contain no-repeat; mask: url('images/component-7.png') center/contain no-repeat; transition: background .3s ease;"></span></button>
+                <button type="button" data-up-chip="lactosa" data-up-guide="1" data-act="toggleChip" class="s2 h5" ><span data-up-ico="1" style="display: block; width: 100%; height: clamp(54px, 7vw, 84px); background: #0b0b0c; -webkit-mask: url('images/component-6.png') center/contain no-repeat; mask: url('images/component-6.png') center/contain no-repeat; transition: background .3s ease;"></span></button>
+                <button type="button" data-up-chip="huevo" data-act="toggleChip" class="s2 h5" ><span data-up-ico="1" style="display: block; width: 100%; height: clamp(54px, 7vw, 84px); background: #0b0b0c; -webkit-mask: url('images/component-8.png') center/contain no-repeat; mask: url('images/component-8.png') center/contain no-repeat; transition: background .3s ease;"></span></button>
+                <button type="button" data-up-chip="gluten" data-up-guide="1" data-act="toggleChip" class="s2 h5" ><span data-up-ico="1" style="display: block; width: 100%; height: clamp(54px, 7vw, 84px); background: #0b0b0c; -webkit-mask: url('images/component-5.png') center/contain no-repeat; mask: url('images/component-5.png') center/contain no-repeat; transition: background .3s ease;"></span></button>
+                <button type="button" data-up-chip="marisco" data-act="toggleChip" class="s2 h5" ><span data-up-ico="1" style="display: block; width: 100%; height: clamp(54px, 7vw, 84px); background: #0b0b0c; -webkit-mask: url('images/component-9.png') center/contain no-repeat; mask: url('images/component-9.png') center/contain no-repeat; transition: background .3s ease;"></span></button>
+
+                <button type="button" data-up-chip="crustaceos" data-act="toggleChip" class="s2 h5" ><span data-up-ico="1" style="display: block; width: 100%; height: clamp(54px, 7vw, 84px); background: #0b0b0c; -webkit-mask: url('images/component-10.png') center/contain no-repeat; mask: url('images/component-10.png') center/contain no-repeat; transition: background .3s ease;"></span></button>
+                <button type="button" data-up-chip="frutos" data-act="toggleChip" class="s2 h5" ><span data-up-ico="1" style="display: block; width: 100%; height: clamp(54px, 7vw, 84px); background: #0b0b0c; -webkit-mask: url('images/component-11.png') center/contain no-repeat; mask: url('images/component-11.png') center/contain no-repeat; transition: background .3s ease;"></span></button>
+                <button type="button" data-up-chip="mostaza" data-act="toggleChip" class="s2 h5" ><span data-up-ico="1" style="display: block; width: 100%; height: clamp(54px, 7vw, 84px); background: #0b0b0c; -webkit-mask: url('images/component-12.png') center/contain no-repeat; mask: url('images/component-12.png') center/contain no-repeat; transition: background .3s ease;"></span></button>
+                <button type="button" data-up-chip="pescado" data-act="toggleChip" class="s2 h5" ><span data-up-ico="1" style="display: block; width: 100%; height: clamp(54px, 7vw, 84px); background: #0b0b0c; -webkit-mask: url('images/component-13.png') center/contain no-repeat; mask: url('images/component-13.png') center/contain no-repeat; transition: background .3s ease;"></span></button>
+                <button type="button" data-up-chip="cerdo" data-up-guide="1" data-act="toggleChip" class="s2 h5" ><span data-up-ico="1" style="display: block; width: 100%; height: clamp(54px, 7vw, 84px); background: #0b0b0c; -webkit-mask: url('images/component-14.png') center/contain no-repeat; mask: url('images/component-14.png') center/contain no-repeat; transition: background .3s ease;"></span></button>
+
+                <button type="button" data-up-chip="diabetes" data-act="toggleChip" class="s2 h5" ><span data-up-ico="1" style="display: block; width: 100%; height: clamp(54px, 7vw, 84px); background: #0b0b0c; -webkit-mask: url('images/component-16.png') center/contain no-repeat; mask: url('images/component-16.png') center/contain no-repeat; transition: background .3s ease;"></span></button>
+                <button type="button" data-up-chip="hipertension" data-act="toggleChip" class="s2 h5" ><span data-up-ico="1" style="display: block; width: 100%; height: clamp(54px, 7vw, 84px); background: #0b0b0c; -webkit-mask: url('images/component-17.png') center/contain no-repeat; mask: url('images/component-17.png') center/contain no-repeat; transition: background .3s ease;"></span></button>
+                <button type="button" data-up-chip="embarazo" data-act="toggleChip" class="s2 h5" ><span data-up-ico="1" style="display: block; width: 100%; height: clamp(54px, 7vw, 84px); background: #0b0b0c; -webkit-mask: url('images/component-4.png') center/contain no-repeat; mask: url('images/component-4.png') center/contain no-repeat; transition: background .3s ease;"></span></button>
+                <button type="button" data-up-chip="vegana" data-act="toggleChip" class="s2 h5" ><span data-up-ico="1" style="display: block; width: 100%; height: clamp(54px, 7vw, 84px); background: #0b0b0c; -webkit-mask: url('images/component-18.png') center/contain no-repeat; mask: url('images/component-18.png') center/contain no-repeat; transition: background .3s ease;"></span></button>
+                <button type="button" data-up-chip="pescatoriano" data-act="toggleChip" class="s2 h5" ><span data-up-ico="1" style="display: block; width: 100%; height: clamp(54px, 7vw, 84px); background: #0b0b0c; -webkit-mask: url('images/component-15.png') center/contain no-repeat; mask: url('images/component-15.png') center/contain no-repeat; transition: background .3s ease;"></span></button>
+              </div>
+
+              <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: clamp(8px, 1.6vw, 20px); margin-top: clamp(22px, 3.4vw, 38px);">
+                <button type="button" data-up-apply="1" data-act="applyFiltersBtn" style="font-family: 'Unbounded', sans-serif; font-weight: 700; font-size: clamp(12px, 1.2vw, 15px); letter-spacing: .02em; cursor: pointer; padding: 15px clamp(18px, 2.6vw, 34px); border-radius: 8px; border: 2px solid #0b0b0c; background: #0b0b0c; color: #ffffff; transition: opacity .3s ease, transform .3s ease;" class="h20">APPLY FILTERS</button>
+                <button type="button" data-up-full="1" data-act="openFull" style="font-family: 'Unbounded', sans-serif; font-weight: 700; font-size: clamp(12px, 1.2vw, 15px); letter-spacing: .02em; cursor: pointer; padding: 15px clamp(18px, 2.6vw, 34px); border-radius: 8px; border: 2px solid #0b0b0c; background: #ffffff; color: #0b0b0c; transition: background .3s ease, transform .3s ease;" class="h21">MENU WITHOUT FILTERS</button>
+              </div>
+            </div>
+
+            <div data-up-pane="1" style="display: none; padding: clamp(16px, 2.6vw, 30px) clamp(14px, 3vw, 30px) clamp(18px, 2.6vw, 30px); max-height: 640px; overflow-y: auto;">
+              <h3 style="margin: 0 0 clamp(14px, 2vw, 20px); font-family: 'Unbounded', sans-serif; font-weight: 700; font-size: clamp(20px, 2.6vw, 34px); letter-spacing: -.02em;">OUR MENU</h3>
+
+              <div data-up-menuhead="1" style="display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: clamp(14px, 3vw, 30px); align-items: start; margin-bottom: clamp(16px, 2.4vw, 24px);">
+                <div data-up-legend="1" style="display: flex; flex-direction: column; gap: 8px;">
+                  <div class="s27"><img src="images/healthy.png" alt="" style="width: 26px; height: auto;"><span class="s21">Foods that meet your restrictions</span></div>
+                  <div class="s27"><img src="images/sad.png" alt="" style="width: 26px; height: auto;"><span class="s21">Foods that might affect you slightly</span></div>
+                  <div class="s27"><img src="images/death.png" alt="" style="width: 26px; height: auto;"><span class="s21">Foods that do NOT fit your restrictions</span></div>
+                </div>
+                <div data-up-filtersbox="1" style="text-align: right;">
+                  <div style="font-family: 'Unbounded', sans-serif; font-weight: 700; font-size: 12px; margin-bottom: 8px;">Filters applied</div>
+                  <div data-up-applied="1" style="display: flex; justify-content: flex-end; gap: 12px; min-height: 66px; align-items: center;"></div>
+                  <button type="button" data-up-clear="1" data-act="clearFilters" style="border: 0; background: transparent; cursor: pointer; padding: 6px 0 0; font-family: 'Unbounded', sans-serif; font-size: 11px; color: #e1543f;">Clear filters ✕</button>
+                  <button type="button" data-up-openfilters="1" data-act="openMenu" style="display: none; margin-left: auto; margin-top: 6px; border: 0; background: #0b0b0c; color: #ffffff; cursor: pointer; padding: 10px 16px; border-radius: 999px; font-family: 'Unbounded', sans-serif; font-weight: 700; font-size: 11px;">Apply filters</button>
+                </div>
+              </div>
+
+              <div data-up-menu="1" style="display: flex; flex-direction: column; gap: clamp(14px, 2vw, 20px);">
+                <div style="font-family: 'Unbounded', sans-serif; font-weight: 700; font-size: clamp(13px, 1.5vw, 18px); letter-spacing: .01em;">PASTA</div>
+
+                <div data-up-dish="carbonara" data-contains="gluten,huevo,cerdo,lactosa,vegana" data-swap="gluten,cerdo,lactosa" data-act="openDish" style="display: grid; grid-template-columns: 92px minmax(0, 1fr) 24px; gap: clamp(8px, 1.4vw, 16px); align-items: center; padding: 12px 10px; margin: 0 -10px; border-radius: 14px; border: 1px solid #D49517; background: #fffdf6; cursor: pointer; transition: background .3s ease, opacity .4s ease;" class="h22">
+                  <img src="images/dish-10.jpg" alt="" class="s7">
+                  <div style="min-width: 0;">
+                    <div style="font-family: 'Unbounded', sans-serif; font-weight: 700; font-size: clamp(13px, 1.4vw, 17px); letter-spacing: -.01em; display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">Fettuccine carbonara <span style="font-family: 'Unbounded', sans-serif; font-weight: 500; font-size: 9px; letter-spacing: .1em; text-transform: uppercase; color: #ffffff; background: #D49517; border-radius: 999px; padding: 3px 7px;">Demo dish · start here</span></div>
+                    <div data-up-desc="1" class="s4">Fettuccine, egg yolk sauce, diced guanciale, grated parmesan, freshly ground black pepper.</div>
+                  </div>
+                  <img src="images/zoom.svg" alt="View dish" style="width: 17px; height: 17px; opacity: .8;">
+                </div>
+
+                <div data-up-dish="bolognese" data-contains="gluten,lactosa,pescatoriano,vegana" data-swap="gluten,lactosa,pescatoriano" data-act="openDish" class="s1 h5" >
+                  <img src="images/dish-9.jpg" alt="" class="s7">
+                  <div style="min-width: 0;">
+                    <div class="s5">Spaghetti bolognese</div>
+                    <div data-up-desc="1" class="s4">Spaghetti, beef ragù, grated parmesan, parsley and toasted garlic bread.</div>
+                  </div>
+                  <img src="images/zoom.svg" alt="View dish" style="width: 17px; height: 17px; opacity: .8;">
+                </div><div style="font-family: 'Unbounded', sans-serif; font-weight: 700; font-size: clamp(13px, 1.5vw, 18px); letter-spacing: .01em; margin-top: 6px;">TO SHARE</div>
+
+                <div data-up-dish="tabla" data-contains="lactosa,gluten,cerdo,vegana" data-swap="gluten" data-act="openDish" class="s1 h5" >
+                  <img src="images/dish-8.jpg" alt="" class="s7">
+                  <div style="min-width: 0;">
+                    <div class="s5">Cheese and charcuterie board</div>
+                    <div data-up-desc="1" class="s4">A selection of cured cheeses, Iberian salchichón, cristal bread, apple, marcona almonds and red berry jam.</div>
+                  </div>
+                  <img src="images/zoom.svg" alt="View dish" style="width: 17px; height: 17px; opacity: .8;">
+                </div>
+
+                <div data-up-dish="pan" data-contains="gluten" data-swap="gluten" data-act="openDish" class="s1 h5" >
+                  <img src="images/dish-3.jpg" alt="" class="s7">
+                  <div style="min-width: 0;">
+                    <div class="s5">Rye bread with roasted aubergine
+</div>
+                    <div data-up-desc="1" class="s4">Toasted rye bread, oven-roasted aubergine, fresh cheese cream, pea shoots and crispy onion.</div>
+                  </div>
+                  <img src="images/zoom.svg" alt="View dish" style="width: 17px; height: 17px; opacity: .8;">
+                </div>
+
+                <div data-up-dish="verde" data-contains="" data-swap="" data-act="openDish" class="s1 h5" >
+                  <img src="images/dish-4.jpg" alt="" class="s7">
+                  <div style="min-width: 0;">
+                    <div class="s5">Green salad with grape and cucumber</div>
+                    <div data-up-desc="1" class="s4">Celery, cucumber, white grape, baby spinach, fresh basil and a lemon and extra virgin olive oil vinaigrette.</div>
+                  </div>
+                  <img src="images/zoom.svg" alt="View dish" style="width: 17px; height: 17px; opacity: .8;">
+                </div>
+
+                <div style="font-family: 'Unbounded', sans-serif; font-weight: 700; font-size: clamp(13px, 1.5vw, 18px); letter-spacing: .01em; margin-top: 6px;">MAINS</div>
+
+                <div data-up-dish="templada" data-contains="huevo,mostaza,vegana" data-swap="huevo,mostaza,vegana" data-act="openDish" class="s1 h5" >
+                  <img src="images/dish-2.jpg" alt="" class="s7">
+                  <div style="min-width: 0;">
+                    <div class="s5">Warm egg and carrot salad</div>
+                    <div data-up-desc="1" class="s4">Boiled egg, baby carrot, green beans, rocket, cherry tomato and pumpkin seeds with mustard dressing.</div>
+                  </div>
+                  <img src="images/zoom.svg" alt="View dish" style="width: 17px; height: 17px; opacity: .8;">
+                </div>
+
+                <div data-up-dish="poche" data-contains="huevo,gluten,vegana" data-swap="gluten" data-act="openDish" class="s1 h5" >
+                  <img src="images/dish-5.jpg" alt="" class="s7">
+                  <div style="min-width: 0;">
+                    <div class="s5">Poached egg on rye toast</div>
+                    <div data-up-desc="1" class="s4">Poached egg, rye toast, lamb’s lettuce, pink pepper and basil oil.</div>
+                  </div>
+                  <img src="images/zoom.svg" alt="View dish" style="width: 17px; height: 17px; opacity: .8;">
+                </div>
+
+                <div data-up-dish="kimchi" data-contains="cerdo,gluten,vegana" data-swap="cerdo,gluten,vegana" data-act="openDish" class="s1 h5" >
+                  <img src="images/dish-6.jpg" alt="" class="s7">
+                  <div style="min-width: 0;">
+                    <div class="s5">Pork kimchi with rice</div>
+                    <div data-up-desc="1" class="s4">Fermented cabbage, pork belly, jasmine rice, gochujang and spring onion.</div>
+                  </div>
+                  <img src="images/zoom.svg" alt="View dish" style="width: 17px; height: 17px; opacity: .8;">
+                </div>
+
+                <div data-up-dish="guiso" data-contains="" data-swap="" data-act="openDish" class="s1 h5" >
+                  <img src="images/dish-7.jpg" alt="" class="s7">
+                  <div style="min-width: 0;">
+                    <div class="s5">Cumin chickpea stew</div>
+                    <div data-up-desc="1" class="s4">Chickpeas, roasted tomato, cumin, bean sprouts and toasted sesame.</div>
+                  </div>
+                  <img src="images/zoom.svg" alt="View dish" style="width: 17px; height: 17px; opacity: .8;">
+                </div>
+
+                
+              </div>
+            </div>
+
+            <div data-up-pane="2" style="display: none; max-height: 640px; overflow-y: auto;">
+              <img data-up-fpic="1" src="images/dish-10.jpg" alt="" style="width: 100%; height: clamp(180px, 26vw, 300px); object-fit: cover; display: block;">
+              <div style="padding: clamp(18px, 2.6vw, 30px) clamp(14px, 3vw, 30px) clamp(20px, 3vw, 32px);">
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
+                  <img data-up-fnoteico="1" src="images/healthy.png" alt="" style="width: 24px; height: auto;">
+                  <span data-up-fnote="1" style="font-family: 'Unbounded', sans-serif; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: #56565e;">Fits your filters</span>
+                </div>
+                <h3 data-up-fname="1" style="margin: 0 0 8px; font-family: 'Unbounded', sans-serif; font-weight: 700; font-size: clamp(20px, 2.6vw, 34px); letter-spacing: -.02em;">Fettuccine carbonara</h3>
+                <div data-up-fprice="1" style="font-family: 'Unbounded', sans-serif; font-weight: 700; font-size: clamp(13px, 1.5vw, 18px); margin-bottom: 14px;">€14.50</div>
+                <p data-up-fdesc="1" style="margin: 0 0 clamp(18px, 2.6vw, 26px); font-family: 'Unbounded', sans-serif; font-size: 12px; line-height: 1.7; color: #56565e; max-width: 70ch;">Fettuccine, egg yolk sauce, diced guanciale, grated parmesan, freshly ground black pepper.</p>
+
+                <div data-up-fmod="1" style="background: #f5f5f6; border-radius: 12px; padding: clamp(16px, 2.4vw, 26px);"></div>
+
+                <div style="display: flex; justify-content: flex-end; margin: 12px 0 clamp(16px, 2.4vw, 24px);">
+                  <button type="button" data-up-edit="1" data-act="toggleEdit" style="display: inline-flex; align-items: center; gap: 8px; border: 0; background: transparent; cursor: pointer; padding: 4px 0; font-family: 'Unbounded', sans-serif; font-weight: 700; font-size: 11px; text-decoration: underline; color: #0b0b0c;">
+                    <span data-up-editlabel="1">Edit ingredients</span>
+                  </button>
+                </div>
+
+                <div style="font-family: 'Unbounded', sans-serif; font-weight: 500; font-size: 11px; margin-bottom: 6px;">Add extra ingredients (+€0.50)</div>
+                <div data-up-fextras="1"></div>
+
+                <div style="display: flex; justify-content: flex-end; margin-top: clamp(20px, 3vw, 30px);">
+                  <button type="button" style="font-family: 'Unbounded', sans-serif; font-weight: 700; font-size: clamp(12px, 1.2vw, 15px); letter-spacing: .02em; cursor: pointer; padding: 16px clamp(20px, 3vw, 38px); border-radius: 8px; border: 2px solid #0b0b0c; background: #0b0b0c; color: #ffffff; transition: background .3s ease, transform .3s ease;" class="h31">ADD TO ORDER</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div style="display: flex; flex-wrap: wrap; gap: 7px; padding: 12px 6px 2px;">
+            <button type="button" data-act="applyFiltersBtn" class="s8 h32" >Go to the menu</button>
+            <button type="button" data-act="goBack" class="s8 h32" >Go back</button>
+            <button type="button" data-act="clearFilters" class="s8 h32" >Reset filters</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
